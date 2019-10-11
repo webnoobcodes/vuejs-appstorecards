@@ -1,4 +1,4 @@
-# vuejs-appbar
+# vuejs-appstorecards
 
 - [Tutorial on Youtube](https://youtu.be/PzC62VHrVFE)
 
