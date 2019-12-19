@@ -1,6 +1,6 @@
 <template>
   <div class="card-wrapper">
-    <div class="card" @click="handleView($event)"
+    <div :id="`card-${item.id}`" class="card" @click="handleView($event, item.id)"
       :class="{'open': item.open}"
       :style="styleObject">
       <div class="card-top">
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  props: ["item"],
+  props: ["item","id"],
   data: () => {
     return {
       styleObject: {
@@ -24,7 +24,7 @@ export default {
     };
   },
   methods: {
-    handleView(el) {
+    handleView(el, cardId) {
       this.item.open = !this.item.open;
       let viewportOffset = el.target.getBoundingClientRect();
 
@@ -34,6 +34,9 @@ export default {
 
         this.styleObject.transform = 
           'translate('+ viewportOffset.left * -1 +'px, '+ viewportOffset.top * -1 +'px)';
+
+        if(cardId !== this.id)
+          this.$router.push({ name: 'card', params: {id: cardId}});
       }
       else {
         this.styleObject = {
@@ -44,6 +47,8 @@ export default {
         document.body.style.position = '';
         document.body.style.top = '';
         window.scrollTo(0, parseInt(scrollY) * -1);
+
+        this.$router.push({ name: 'cardlist'});
       }
     }
   }

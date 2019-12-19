@@ -1,6 +1,7 @@
 # vuejs-appstorecards
 
-- [Tutorial on Youtube](https://youtu.be/PzC62VHrVFE)
+- [Tutorial on Youtube, Part 1](https://youtu.be/PzC62VHrVFE)
+- [Tutorial on Youtube, Part 2](https://youtu.be/h8vBXKmXh0w)
 
 
 ## Project setup
